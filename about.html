@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Digital Balance — the people who built it and why.">
+  <title>About Us — Digital Balance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #0a7163;
+      --teal-light: #0d9488;
+      --teal-bg: #f0fafa;
+      --cream: #faf8f5;
+      --ink: #1a1a1a;
+      --ink-soft: #4a4a4a;
+      --ink-muted: #787878;
+      --border: #e8e4de;
+      --card-bg: #ffffff;
+      --page-bg: var(--cream);
+      --max-w: 72rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --cream: #141210;
+        --teal-bg: #0d2420;
+        --ink: #f0ede8;
+        --ink-soft: #c8c4be;
+        --ink-muted: #8a8680;
+        --border: #2a2722;
+        --card-bg: #1e1c19;
+        --page-bg: var(--cream);
+      }
+    }
+
+    [data-theme="dark"] {
+      --cream: #141210;
+      --teal-bg: #0d2420;
+      --ink: #f0ede8;
+      --ink-soft: #c8c4be;
+      --ink-muted: #8a8680;
+      --border: #2a2722;
+      --card-bg: #1e1c19;
+      --page-bg: var(--cream);
+    }
+
+    [data-theme="light"] {
+      --cream: #faf8f5;
+      --teal-bg: #f0fafa;
+      --ink: #1a1a1a;
+      --ink-soft: #4a4a4a;
+      --ink-muted: #787878;
+      --border: #e8e4de;
+      --card-bg: #ffffff;
+      --page-bg: var(--cream);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--page-bg);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 1rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 5vw, 2rem);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: color-mix(in srgb, var(--page-bg) 85%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem clamp(1rem, 5vw, 2rem);
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--ink-muted);
+      cursor: pointer;
+      padding: 0.375rem 0.625rem;
+      font-size: 0.875rem;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .theme-toggle:hover { border-color: var(--teal); color: var(--teal); }
+
+    .nav-back {
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-back:hover { color: var(--teal); }
+
+    /* ── Content ── */
+    .policy-wrap {
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 5vw, 2rem) clamp(4rem, 10vw, 7rem);
+    }
+
+    .policy-eyebrow {
+      display: inline-block;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.25rem;
+      background: var(--teal-bg);
+      padding: 0.375rem 0.875rem;
+      border-radius: 100px;
+      border: 1px solid color-mix(in srgb, var(--teal) 25%, transparent);
+    }
+
+    .policy-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+
+    .policy-meta {
+      font-size: 0.875rem;
+      color: var(--ink-muted);
+      margin-bottom: 3rem;
+    }
+
+    .policy-irony {
+      background: var(--teal-bg);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 3rem;
+      font-family: 'Fraunces', Georgia, serif;
+      font-style: italic;
+      font-size: 1.0625rem;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    .policy-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .policy-section h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+    }
+
+    .policy-section p {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      margin-bottom: 0.75rem;
+    }
+
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Bio cards ── */
+    .bio-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .bio-name {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.015em;
+      margin-bottom: 0.25rem;
+    }
+
+    .bio-role {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.25rem;
+    }
+
+    .bio-body {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    .bio-body p { margin-bottom: 0.75rem; }
+    .bio-body p:last-child { margin-bottom: 0; }
+
+    .bio-placeholder {
+      font-size: 0.9375rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      background: var(--teal-bg);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      border: 1px dashed color-mix(in srgb, var(--teal) 30%, transparent);
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      background: var(--card-bg);
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 700px) {
+      .footer-inner {
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .footer-brand {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--teal);
+      margin-bottom: 0.625rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.875rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+
+    .footer-col h4 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.875rem;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.5rem; }
+    .footer-col a {
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover { color: var(--teal); }
+
+    .footer-bottom {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8125rem;
+      color: var(--ink-muted);
+    }
+
+    .footer-privacy {
+      font-size: 0.8125rem;
+      color: var(--teal);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Digital Balance</a>
+      <div class="nav-actions">
+        <a href="index.html" class="nav-back">← Back</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">◐</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="policy-wrap">
+    <span class="policy-eyebrow">About Us</span>
+    <h1 class="policy-title">We built this because we care.</h1>
+    <p class="policy-meta">Digital Balance is a product of Ontic, LLC</p>
+
+    <blockquote class="policy-irony">
+      "We didn't see a market opportunity. We saw a problem we couldn't stop thinking about."
+    </blockquote>
+
+    <div class="policy-section">
+      <p>Digital Balance was built by two people. Here's who we are.</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="bio-card">
+      <div class="bio-name">Ryan Shanahan</div>
+      <div class="bio-role">Co-founder</div>
+      <div class="bio-body">
+        <p>Ryan is an information security professional with a background as a CISO. He spent years studying how adversaries exploit cognitive vulnerabilities — phishing, social engineering, pretexting — and eventually noticed that the same psychological levers being used in targeted attacks were being deployed at population scale by social media platforms.</p>
+        <p>The difference: social engineering attacks are illegal. Persuasive design is a business model.</p>
+        <p>Digital Balance emerged from that observation. Ryan brings a security mindset to digital wellness — treating attention capture as an adversarial problem worth defending against, not just a lifestyle inconvenience to manage. The program is built around that premise: the platforms aren't neutral, and you deserve to understand what they're actually doing.</p>
+      </div>
+    </div>
+
+    <div class="bio-card">
+      <div class="bio-name">Sylvia Olveda</div>
+      <div class="bio-role">Co-founder</div>
+      <div class="bio-body">
+        <p>Sylvia holds two psychology degrees from Stanford, where she served as a Teaching Assistant for Philip Zimbardo — the researcher whose work on situational control, compliance, and how environments shape behavior became foundational to everything we now understand about influence at scale.</p>
+        <p>She wasn't just reading Zimbardo. She was inside the room, translating his research for students and working directly with his methods. That experience gave her a practitioner's understanding of how environments — not individual willpower — determine behavior.</p>
+        <p>From there, Sylvia moved into user experience research — the discipline where behavioral psychology meets product design. UX research asks why people behave the way they do inside digital systems, and how those systems should be built to actually serve human needs. It's work that sits at the uncomfortable intersection of cognitive science and commercial software, and Sylvia spent years in that space.</p>
+        <p>What she saw there wasn't encouraging. The same psychological principles she'd studied at Stanford — reward variability, social proof, loss aversion, identity-based compliance — were being baked into interfaces not to help users, but to keep them. Not as a side effect. As the product.</p>
+        <p>Digital Balance is built on Acceptance and Commitment Therapy, a framework that treats compulsive behavior not as weakness but as a predictable response to a poorly designed environment. That framing is Sylvia's. When a platform is engineered to exploit your cognition, understanding your own mind matters more than trying to out-willpower it.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="policy-section">
+      <h2>Contact</h2>
+      <p>Questions or just want to say hello?</p>
+      <p><a href="mailto:team@digitalbalance.app" style="color: var(--teal); font-weight: 500;">team@digitalbalance.app</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">Digital Balance</div>
+          <p class="footer-tagline">An ACT-based digital wellness program.<br>Built to be finished.</p>
+          <p class="footer-privacy" style="margin-top: 1rem;">We collect nothing. ✓</p>
+        </div>
+        <div class="footer-col">
+          <h4>Inspired by</h4>
+          <ul>
+            <li><a href="#">Winn Schwartau</a></li>
+            <li><a href="#">Cognitive Security Institute</a></li>
+            <li><a href="#">Philip Zimbardo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ontic, LLC. All rights reserved.</p>
+        <p>digitalbalance.app</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const stored = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (stored) {
+      root.setAttribute('data-theme', stored);
+    } else if (prefersDark) {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    function toggleTheme() {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+  </script>
+</body>
+</html>
