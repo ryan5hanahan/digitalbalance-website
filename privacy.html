@@ -125,14 +125,21 @@
 
     .theme-toggle:hover { border-color: var(--teal); color: var(--teal); }
 
-    .nav-back {
+    .nav-cta {
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.875rem;
-      color: var(--ink-soft);
+      font-weight: 500;
+      cursor: pointer;
       text-decoration: none;
-      transition: color 0.15s;
+      transition: opacity 0.15s;
     }
 
-    .nav-back:hover { color: var(--teal); }
+    .nav-cta:hover { opacity: 0.88; }
 
     /* ── Content ── */
     .policy-wrap {
@@ -343,10 +350,10 @@
 
   <nav>
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Digital Balance</a>
+      <a href="#" class="nav-logo">Digital Balance</a>
       <div class="nav-actions">
-        <a href="index.html" class="nav-back">← Back</a>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">◐</button>
+        <a href="#purchase" class="nav-cta">Get it — $1</a>
       </div>
     </div>
   </nav>
