@@ -141,6 +141,17 @@
 
     .nav-cta:hover { opacity: 0.88; }
 
+    .nav-back {
+      color: var(--ink-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 400;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-back:hover { color: var(--teal); }
+
     /* ── Content ── */
     .policy-wrap {
       max-width: 48rem;
@@ -348,7 +359,8 @@
       <a href="#" class="nav-logo">Digital Balance</a>
       <div class="nav-actions">
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">◐</button>
-        <a href="#purchase" class="nav-cta">Get it — $1</a>
+        <a href="index.html" class="nav-back">← Back</a>
+        <a href="index.html#purchase" class="nav-cta">Get it — $1</a>
       </div>
     </div>
   </nav>
