@@ -108,11 +108,13 @@
 
     .nav-logo {
       text-decoration: none;
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: var(--teal);
-      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+    }
+    .nav-logo img {
+      height: 32px;
+      width: auto;
+      display: block;
     }
 
     .nav-actions {
@@ -559,7 +561,7 @@
   <!-- Nav -->
   <nav>
     <div class="nav-inner">
-      <a href="#" class="nav-logo">Digital Balance</a>
+      <a href="#" class="nav-logo"><img src="digitalbalance.png" alt="Digital Balance"></a>
       <div class="nav-actions">
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">◐</button>
         <a href="#purchase" class="nav-cta">Get it — $1</a>
@@ -570,7 +572,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <img src="digitalbalance.png" alt="Digital Balance" style="width: 240px; max-width: 80%; height: auto; margin-bottom: 2rem; display: block; margin-left: auto; margin-right: auto;">
+      <span class="hero-eyebrow">Digital Balance</span>
       <h1>A 14-day program to stop reaching for your phone <em>without meaning to</em>.</h1>
       <p class="hero-tagline">Based on Acceptance &amp; Commitment Therapy. Work through it once, keep the skills for good.</p>
       <div class="hero-cta-group">
