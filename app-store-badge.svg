@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="135" height="40" viewBox="0 0 135 40">
+  <rect width="135" height="40" rx="6" fill="#000"/>
+  <!-- Apple logo -->
+  <path fill="#fff" d="M17.1 11.2c.8-1 1.3-2.3 1.1-3.6-1.1.1-2.5.7-3.3 1.7-.7.8-1.3 2.1-1.1 3.4 1.2.1 2.5-.6 3.3-1.5z"/>
+  <path fill="#fff" d="M21.4 17c0-2.5 2.1-3.7 2.2-3.8-1.2-1.7-3.1-1.9-3.7-2-1.6-.2-3.1 1-3.9 1-.8 0-2.1-.9-3.4-.9-1.8 0-3.4 1-4.3 2.6-1.8 3.1-.5 7.8 1.3 10.3.9 1.3 1.9 2.7 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.5-1-2.5-4.4z"/>
+  <text font-family="-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif" fill="#fff">
+    <tspan x="34" y="17" font-size="9.5" letter-spacing="0.1">Download on the</tspan>
+    <tspan x="34" y="30" font-size="15" font-weight="600">App Store</tspan>
+  </text>
+</svg>

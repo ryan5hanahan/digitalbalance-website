@@ -363,49 +363,15 @@
       align-items: center;
     }
 
-    .badge-store {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
-      background: #111111;
-      color: #fff;
-      border-radius: 10px;
-      padding: 0.625rem 1.25rem;
+    .store-badge-link {
+      display: inline-block;
       text-decoration: none;
       transition: opacity 0.15s, transform 0.1s;
-      border: 1px solid rgba(255,255,255,0.12);
-      min-width: 9rem;
     }
 
-    .badge-store:hover { opacity: 0.82; }
-    .badge-store:active { transform: scale(0.97); }
-
-    .badge-store-sub {
-      font-size: 0.6rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-      line-height: 1;
-      margin-bottom: 0.1875rem;
-    }
-
-    .badge-store-name {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: #fff;
-      line-height: 1.2;
-    }
-
-    .badge-store--sm {
-      padding: 0.4375rem 0.875rem;
-      border-radius: 8px;
-      min-width: 0;
-    }
-
-    .badge-store--sm .badge-store-sub { font-size: 0.5625rem; }
-    .badge-store--sm .badge-store-name { font-size: 0.8125rem; }
+    .store-badge-link:hover { opacity: 0.82; }
+    .store-badge-link:active { transform: scale(0.97); }
+    .store-badge-link img { display: block; }
   </style>
 </head>
 <body>
@@ -417,13 +383,11 @@
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">◐</button>
         <a href="index.html" class="nav-back">← Back</a>
         <div class="store-badges">
-          <a href="#" class="badge-store badge-store--sm">
-            <span class="badge-store-sub">Download on the</span>
-            <span class="badge-store-name">App Store</span>
+          <a href="#" class="store-badge-link" aria-label="Download on the App Store">
+            <img src="app-store-badge.svg" alt="Download on the App Store" width="108" height="32">
           </a>
-          <a href="#" class="badge-store badge-store--sm">
-            <span class="badge-store-sub">Get it on</span>
-            <span class="badge-store-name">Google Play</span>
+          <a href="#" class="store-badge-link" aria-label="Get it on Google Play">
+            <img src="google-play-badge.svg" alt="Get it on Google Play" width="108" height="32">
           </a>
         </div>
       </div>
