@@ -598,6 +598,13 @@
     .store-badge-link:active { transform: scale(0.97); }
     .store-badge-link img { display: block; }
 
+    /* Hide nav store badges on small screens so the logo + wordmark don't wrap.
+       Badges still appear in the hero card and pricing section. */
+    .nav-actions .store-badges { display: none; }
+    @media (min-width: 640px) {
+      .nav-actions .store-badges { display: flex; }
+    }
+
     /* ── Brand hero card (matches app's home-screen hero) ── */
     .hero { padding-top: clamp(3rem, 8vw, 5rem); }
 
