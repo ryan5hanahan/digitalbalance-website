@@ -1,0 +1,138 @@
+/* Shared styles for every page: tokens, type, nav, footer and the support notice.
+   Colours are the app's own (digital-balance/src/index.css), so the site and the
+   screenshots on it read as one product in both themes. */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --paper: #f5f8f7;
+  --surface: #ffffff;
+  --ink: #12201d;
+  --ink-soft: #3d4f4b;
+  --muted: #627571;
+  --rule: #dce5e2;
+  --teal: #0a7163;
+  --teal-strong: #085f53;
+  --mint: #dcf1ec;
+  --deep: #06332d;
+  --deep-ink: #e6f3f0;
+  --deep-muted: #9cc4bc;
+  --mark-empty: #cfdcd8;
+  --wrap: 72rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0e1513;
+    --surface: #18211f;
+    --ink: #eef3f1;
+    --ink-soft: #c3d0cc;
+    --muted: #8fa19c;
+    --rule: #26322f;
+    --teal: #3fbfae;
+    --teal-strong: #6fd3c4;
+    --mint: #163631;
+    --deep: #0a2420;
+    --mark-empty: #2c3a37;
+  }
+}
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; letter-spacing: -0.02em; }
+h2 { font-size: clamp(2rem, 4.2vw, 3rem); line-height: 1.08; max-width: 18ch; }
+h3 { font-size: 1.3125rem; line-height: 1.25; letter-spacing: -0.01em; }
+.lede { font-size: 1.1875rem; color: var(--ink-soft); max-width: 36rem; margin-top: 1.25rem; }
+
+/* ── Nav ── */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav .wrap { display: flex; align-items: center; gap: 2rem; height: 4rem; }
+.brand { display: inline-flex; align-items: center; gap: 0.625rem; text-decoration: none; font-family: 'Fraunces', Georgia, serif; font-size: 1.125rem; font-weight: 600; letter-spacing: -0.01em; }
+.brand img { width: 30px; height: 30px; border-radius: 8px; background: #fff; padding: 2px; box-shadow: 0 0 0 1px var(--rule); }
+.nav-links { display: flex; gap: 1.75rem; margin-left: auto; list-style: none; font-size: 0.9375rem; }
+.nav-links a { text-decoration: none; color: var(--ink-soft); }
+.nav-links a:hover, .nav-links a[aria-current] { color: var(--ink); }
+.nav-status { font-size: 0.875rem; font-weight: 500; color: var(--teal); background: var(--mint); padding: 0.375rem 0.75rem; border-radius: 99px; white-space: nowrap; }
+@media (max-width: 760px) { .nav-links { display: none; } .nav-status { margin-left: auto; } }
+
+/* ── Store availability ── */
+.availability { margin-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; }
+.badges { display: flex; gap: 0.625rem; }
+.badge { display: block; }
+/* Store badges stay unaltered (Apple and Google forbid recolouring them); until the
+   listings are live they're plain images, not links, next to the "Coming soon" note. */
+.badge img { display: block; height: 44px; width: auto; }
+@media (prefers-color-scheme: dark) { .badge img { box-shadow: 0 0 0 1px #a6a6a6; border-radius: 8px; } }
+.availability p { font-size: 0.9375rem; color: var(--muted); }
+.availability strong { color: var(--ink); font-weight: 600; }
+
+/* ── Support notice ── */
+.support { padding: 1.25rem 1.5rem; border-radius: 14px; background: var(--surface); box-shadow: 0 0 0 1px var(--rule); display: grid; grid-template-columns: 1.5rem 1fr; gap: 0.875rem; font-size: 0.9375rem; color: var(--ink-soft); }
+.support svg { width: 20px; height: 20px; margin-top: 0.2rem; stroke: var(--teal); fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.support p + p { margin-top: 0.375rem; }
+.support strong { color: var(--ink); font-weight: 600; }
+.support a { color: var(--teal); font-weight: 600; }
+
+/* ── Footer ── */
+footer { border-top: 1px solid var(--rule); padding: 3rem 0 2.5rem; font-size: 0.9375rem; }
+.foot { display: grid; gap: 2rem; }
+@media (min-width: 760px) { .foot { grid-template-columns: 2fr 1fr 1fr; } }
+.foot h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem; }
+.foot ul { list-style: none; display: grid; gap: 0.4rem; color: var(--ink-soft); }
+.foot a { text-decoration: none; }
+.foot a:hover { color: var(--teal); }
+.foot .tag { color: var(--muted); margin-top: 0.5rem; max-width: 22rem; }
+.fine { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; color: var(--muted); font-size: 0.875rem; }
+
+/* ── Document pages (privacy, terms, about) ── */
+.doc-head { padding: clamp(3rem, 7vw, 5rem) 0 clamp(2rem, 4vw, 3rem); border-bottom: 1px solid var(--rule); }
+.doc-kind { font-size: 0.9375rem; font-weight: 600; color: var(--teal); }
+.doc-head h1 { margin-top: 0.75rem; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.04; letter-spacing: -0.03em; max-width: 16ch; }
+.doc-meta { margin-top: 1.25rem; font-size: 0.9375rem; color: var(--muted); }
+
+.doc { display: grid; gap: 2.5rem; padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(4rem, 8vw, 6rem); }
+@media (min-width: 960px) { .doc { grid-template-columns: 14rem minmax(0, 1fr); gap: 5rem; } }
+
+.toc { font-size: 0.9375rem; }
+.toc h2 { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; letter-spacing: 0; color: var(--muted); margin-bottom: 0.75rem; }
+.toc ol { list-style: none; display: grid; gap: 0.45rem; border-left: 1px solid var(--rule); }
+.toc a { display: block; padding-left: 1rem; margin-left: -1px; border-left: 2px solid transparent; text-decoration: none; color: var(--ink-soft); line-height: 1.35; }
+.toc a:hover { color: var(--ink); }
+.toc a.is-current { color: var(--teal); border-left-color: var(--teal); }
+@media (min-width: 960px) { .toc nav { position: sticky; top: 6rem; } }
+@media (max-width: 959px) { .toc ol { grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); border-left: 0; gap: 0.35rem 1rem; } .toc a { padding-left: 0; border-left: 0; } }
+
+.doc-body { max-width: 42rem; }
+.doc-body section { scroll-margin-top: 5.5rem; padding: 2rem 0; border-top: 1px solid var(--rule); }
+.doc-body section:first-child { border-top: 0; padding-top: 0; }
+.doc-body h2 { font-size: 1.625rem; line-height: 1.2; letter-spacing: -0.015em; max-width: none; margin-bottom: 0.875rem; }
+.doc-body p, .doc-body li { color: var(--ink-soft); }
+.doc-body p + p, .doc-body p + ul, .doc-body ul + p, .doc-body .support + p { margin-top: 0.875rem; }
+.doc-body ul { margin-top: 0.875rem; padding-left: 1.25rem; display: grid; gap: 0.5rem; }
+.doc-body li::marker { color: var(--muted); }
+.doc-body strong { color: var(--ink); font-weight: 600; }
+.doc-body a { color: var(--teal); font-weight: 500; }
+.doc-body .support { margin-top: 1rem; }
+.doc-body address { font-style: normal; margin-top: 1rem; color: var(--ink-soft); }
