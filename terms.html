@@ -5,58 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Digital Balance Terms of Service — simple, human-readable terms for a $1 digital wellness app.">
   <title>Terms of Service — Digital Balance</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --teal: #0a7163;
-      --teal-light: #0d9488;
-      --teal-bg: #f0fafa;
+      --teal-light: #128f83;
+      --teal-bg: #f0faf9;
       --cream: #faf8f5;
-      --ink: #1a1a1a;
-      --ink-soft: #4a4a4a;
-      --ink-muted: #787878;
-      --border: #e8e4de;
+      --ink: #0f172a;
+      --ink-soft: #475569;
+      --ink-muted: #64748b;
+      --border: #e2e8f0;
       --card-bg: #ffffff;
+      --on-teal: #ffffff;
       --page-bg: var(--cream);
       --max-w: 72rem;
     }
 
+    /* Dark palette matches the app: green-tinted near-black drawn from the brand teal. */
     @media (prefers-color-scheme: dark) {
       :root {
-        --cream: #141210;
-        --teal-bg: #0d2420;
-        --ink: #f0ede8;
-        --ink-soft: #c8c4be;
-        --ink-muted: #8a8680;
-        --border: #2a2722;
-        --card-bg: #1e1c19;
+        --teal: #3fbfae;
+        --teal-light: #3a9a8c;
+        --teal-bg: #14302b;
+        --cream: #0e1513;
+        --ink: #eef3f1;
+        --ink-soft: #a3b3af;
+        --ink-muted: #7f8f8b;
+        --border: #2a3532;
+        --card-bg: #18211f;
+        --on-teal: #062421;
         --page-bg: var(--cream);
       }
     }
 
     [data-theme="dark"] {
-      --cream: #141210;
-      --teal-bg: #0d2420;
-      --ink: #f0ede8;
-      --ink-soft: #c8c4be;
-      --ink-muted: #8a8680;
-      --border: #2a2722;
-      --card-bg: #1e1c19;
+      --teal: #3fbfae;
+      --teal-light: #3a9a8c;
+      --teal-bg: #14302b;
+      --cream: #0e1513;
+      --ink: #eef3f1;
+      --ink-soft: #a3b3af;
+      --ink-muted: #7f8f8b;
+      --border: #2a3532;
+      --card-bg: #18211f;
+      --on-teal: #062421;
       --page-bg: var(--cream);
     }
 
     [data-theme="light"] {
+      --teal: #0a7163;
+      --teal-light: #128f83;
+      --teal-bg: #f0faf9;
       --cream: #faf8f5;
-      --teal-bg: #f0fafa;
-      --ink: #1a1a1a;
-      --ink-soft: #4a4a4a;
-      --ink-muted: #787878;
-      --border: #e8e4de;
+      --ink: #0f172a;
+      --ink-soft: #475569;
+      --ink-muted: #64748b;
+      --border: #e2e8f0;
       --card-bg: #ffffff;
+      --on-teal: #ffffff;
       --page-bg: var(--cream);
     }
 
@@ -127,7 +136,7 @@
 
     .nav-cta {
       background: var(--teal);
-      color: #fff;
+      color: var(--on-teal);
       border: none;
       border-radius: 6px;
       padding: 0.5rem 1rem;
@@ -383,7 +392,7 @@
   <div class="policy-wrap">
     <span class="policy-eyebrow">Terms of Service</span>
     <h1 class="policy-title">Plain terms for a $1 app.</h1>
-    <p class="policy-meta">Last updated April 19, 2026 &nbsp;·&nbsp; Digital Balance by Ontic, LLC</p>
+    <p class="policy-meta">Last updated October 2, 2026 &nbsp;·&nbsp; Digital Balance by Ontic, LLC</p>
 
     <blockquote class="policy-irony">
       "We wrote these terms to be read, not buried. If something here surprises you, email us."
@@ -398,22 +407,35 @@
 
     <div class="policy-section">
       <h2>What Digital Balance is</h2>
-      <p>Digital Balance is an educational digital wellness program delivered as a web application. It uses ACT-based (Acceptance and Commitment Therapy–informed) principles to help adults build a healthier relationship with technology.</p>
+      <p>Digital Balance is an educational digital wellness program, available as an app for iPhone and Android. It uses ACT-based (Acceptance and Commitment Therapy–informed) principles to help adults build a healthier relationship with technology.</p>
       <p>It is not a medical device, a clinical treatment, a therapy substitute, or a diagnostic tool. It does not treat, diagnose, or cure any condition. If you have concerns about your mental health or technology use, please consult a qualified healthcare professional.</p>
+      <p><strong>If you're in crisis or thinking about harming yourself,</strong> in the US call or text 988 (Suicide &amp; Crisis Lifeline). Elsewhere, call your local emergency number or find a helpline at <a href="https://findahelpline.com" style="color: var(--teal); font-weight: 500;">findahelpline.com</a>.</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="policy-section">
+      <h2>Who it's for</h2>
+      <p>Digital Balance is designed for adults. If you're under 18, use it only with the permission of a parent or guardian. It isn't intended for children under 13.</p>
     </div>
 
     <hr class="divider">
 
     <div class="policy-section">
       <h2>Acceptance of these terms</h2>
-      <p>By accessing or using Digital Balance, you agree to be bound by these Terms of Service. If you don't agree, please don't use the program. That's it — no checkbox required, just common sense.</p>
+      <p>By downloading, accessing, or using Digital Balance, you agree to be bound by these Terms of Service. If you don't agree, please don't use the program. That's it — no checkbox required, just common sense.</p>
     </div>
 
     <hr class="divider">
 
     <div class="policy-section">
       <h2>Your license</h2>
-      <p>When you purchase Digital Balance, we grant you a personal, non-exclusive, non-transferable license to use the program for your own private, non-commercial purposes. You may not:</p>
+      <p>When you buy Digital Balance, we grant you a personal, non-exclusive, non-transferable license to use the program for your own private, non-commercial purposes, on devices you own or control:</p>
+      <ul>
+        <li>If you got it from Apple's App Store: on Apple-branded devices, as permitted by the Usage Rules in Apple's Media Services Terms and Conditions (including Family Sharing, if it's enabled).</li>
+        <li>If you got it from Google Play: as permitted by the Google Play Terms of Service.</li>
+      </ul>
+      <p>You may not:</p>
       <ul>
         <li>Resell, sublicense, or redistribute the program or its content</li>
         <li>Copy or extract content for use outside the program</li>
@@ -426,15 +448,29 @@
 
     <div class="policy-section">
       <h2>Payment &amp; refunds</h2>
-      <p>Digital Balance is a one-time purchase. There are no subscriptions, no renewals, no hidden fees.</p>
-      <p>If you're not satisfied, email us within 30 days of purchase and we'll refund you — no questions asked. After 30 days, purchases are final. We think $1 is a reasonable price for a program we put real work into, and we stand behind it.</p>
+      <p>Digital Balance is a one-time purchase. There are no subscriptions, no renewals, no in-app purchases, and no hidden fees.</p>
+      <p>Your purchase is processed by Apple or Google, not by us, under their terms and refund policies. We never receive your payment details.</p>
+      <ul>
+        <li><strong>App Store:</strong> request a refund from Apple at <a href="https://reportaproblem.apple.com" style="color: var(--teal); font-weight: 500;">reportaproblem.apple.com</a>. Apple decides App Store refunds; we can't issue them ourselves, but we won't stand in your way.</li>
+        <li><strong>Google Play:</strong> within 48 hours of buying, you can request a refund directly from Google Play. After that, email us within 30 days of purchase and we'll refund you through Google Play — no questions asked.</li>
+      </ul>
+      <p>We think $1 is a reasonable price for a program we put real work into, and we stand behind it.</p>
     </div>
 
     <hr class="divider">
 
     <div class="policy-section">
-      <h2>Privacy</h2>
-      <p>We collect no data. Everything you do in Digital Balance stays on your device. Read the full details in our <a href="privacy.html" style="color: var(--teal); font-weight: 500;">Privacy Policy</a>.</p>
+      <h2>Your data stays on your phone</h2>
+      <p>Everything you enter — your answers, progress, and check-ins — is stored only on your device. That's what keeps it private, and it also means we can't recover it for you. Deleting the app, or using "Reset All Data," permanently erases it. Use "Export Backup" in the app if you want a copy.</p>
+      <p>Reminders are optional. If you turn them on, they're scheduled by your phone; nothing is sent from a server. You can turn them off anytime in your phone's settings.</p>
+      <p>Read the full details in our <a href="privacy.html" style="color: var(--teal); font-weight: 500;">Privacy Policy</a>.</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="policy-section">
+      <h2>Updates</h2>
+      <p>We may release updates through the App Store and Google Play to fix problems, improve the program, or keep it working with new versions of iOS and Android. Some updates may change or remove features.</p>
     </div>
 
     <hr class="divider">
@@ -449,7 +485,7 @@
 
     <div class="policy-section">
       <h2>No warranty</h2>
-      <p>Digital Balance is provided "as is" and "as available" without warranty of any kind, express or implied. We make no guarantees that the program will produce any particular result for you, that it will be error-free, or that it will be available at any given moment.</p>
+      <p>Digital Balance is provided "as is" and "as available" without warranty of any kind, express or implied, to the extent the law allows. We make no guarantees that the program will produce any particular result for you, that it will be error-free, or that it will be available at any given moment.</p>
       <p>Wellness programs work differently for different people. We believe in this program, but we can't promise it will work for you.</p>
     </div>
 
@@ -463,24 +499,51 @@
     <hr class="divider">
 
     <div class="policy-section">
+      <h2>If you got Digital Balance from Apple's App Store</h2>
+      <p>Apple requires these terms for apps sold on the App Store. They apply only to App Store copies of Digital Balance:</p>
+      <ul>
+        <li>These terms are between you and Ontic, LLC — not Apple. We, not Apple, are solely responsible for Digital Balance and its content.</li>
+        <li>Apple has no obligation to provide any maintenance or support for Digital Balance. For help, contact us using the details below.</li>
+        <li>If Digital Balance fails to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price to you. To the maximum extent permitted by law, Apple has no other warranty obligation for Digital Balance, and any other claims, losses, liabilities, damages, costs, or expenses from a failure to conform to a warranty are our responsibility, to the extent they can't be disclaimed.</li>
+        <li>We, not Apple, are responsible for addressing any claims by you or a third party relating to Digital Balance or your use of it, including product liability claims, claims that it fails to conform to any legal or regulatory requirement, and claims arising under consumer protection, privacy, or similar laws.</li>
+        <li>If a third party claims that Digital Balance or your use of it infringes their intellectual property rights, we, not Apple, are solely responsible for investigating, defending, settling, and discharging that claim.</li>
+        <li>You confirm that you are not located in a country subject to a U.S. Government embargo or designated by the U.S. Government as a "terrorist supporting" country, and that you are not on any U.S. Government list of prohibited or restricted parties.</li>
+        <li>You must comply with any applicable third-party terms (such as your wireless carrier's) when using Digital Balance.</li>
+        <li>Apple and its subsidiaries are third-party beneficiaries of these terms. Once you accept them, Apple has the right to enforce them against you as a third-party beneficiary.</li>
+      </ul>
+    </div>
+
+    <hr class="divider">
+
+    <div class="policy-section">
+      <h2>If you got Digital Balance from Google Play</h2>
+      <p>The Google Play Terms of Service and Google Play's policies also apply to your purchase. If they conflict with these terms on anything about the purchase itself, Google Play's terms apply.</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="policy-section">
       <h2>Governing law</h2>
       <p>These terms are governed by the laws of the State of Washington, without regard to conflict of law principles. Any disputes will be resolved in the courts of Washington State.</p>
+      <p>Nothing in these terms takes away rights you have under consumer protection laws where you live that can't be waived by contract.</p>
     </div>
 
     <hr class="divider">
 
     <div class="policy-section">
       <h2>Changes to these terms</h2>
-      <p>We may update these terms from time to time. If we make material changes, we'll update the date at the top of this page. Continued use after a change constitutes acceptance. We don't anticipate many changes — this is a simple $1 app with simple terms.</p>
+      <p>We may update these terms from time to time. If we make material changes, we'll update the date at the top of this page and mention it in the app's release notes. Continued use after a change constitutes acceptance. We don't anticipate many changes — this is a simple $1 app with simple terms.</p>
     </div>
 
     <hr class="divider">
 
     <div class="policy-section">
       <h2>Contact</h2>
-      <p>Questions about these terms? Just email us.</p>
+      <p>Questions, complaints, or claims about Digital Balance or these terms? Just email us.</p>
       <div class="contact-card">
+        <!-- TODO before App Store submission: add Ontic, LLC's full mailing address (Apple's EULA minimum terms require developer name and address). -->
         <p style="font-size: 0.9375rem; color: var(--ink-soft);">Ontic, LLC<br>
+        Seattle, Washington, USA<br>
         <a href="mailto:digitalbalance@onticllc.com">digitalbalance@onticllc.com</a></p>
       </div>
     </div>

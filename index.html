@@ -3,31 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Digital Balance — a 52-lesson, ACT-based program to reclaim agency over your attention. $1. No subscription, no data collection.">
+  <meta name="description" content="Digital Balance — a 23-lesson, ACT-based program to reclaim agency over your attention. $1. No subscription, no data collection.">
   <meta property="og:title" content="Digital Balance">
-  <meta property="og:description" content="Reclaim agency over your attention. 52 research-backed lessons. $1. No subscription.">
+  <meta property="og:description" content="Reclaim agency over your attention. 23 short, research-backed lessons. $1. No subscription.">
   <meta property="og:type" content="website">
   <title>Digital Balance — Reclaim Agency Over Your Attention</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts.css">
   <style>
     /* ── Reset & tokens ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --teal: #0a7163;
-      --teal-light: #0d9488;
-      --teal-500: #14b8a6;
-      --teal-600: #0d9488;
-      --teal-700: #0f766e;
-      --teal-bg: #f0fafa;
+      --teal-light: #128f83;
+      --teal-500: #128f83;
+      --teal-600: #0a7163;
+      --teal-700: #085f53;
+      --teal-bg: #f0faf9;
       --cream: #faf8f5;
-      --ink: #1a1a1a;
-      --ink-soft: #4a4a4a;
-      --ink-muted: #787878;
-      --border: #e8e4de;
+      --ink: #0f172a;
+      --ink-soft: #475569;
+      --ink-muted: #64748b;
+      --border: #e2e8f0;
       --card-bg: #ffffff;
+      --on-teal: #ffffff;
       --page-bg: var(--cream);
       --max-w: 72rem;
       --gap: clamp(1.5rem, 4vw, 3rem);
@@ -36,38 +35,57 @@
       --brand-shadow-sm: 0 10px 26px rgba(10, 113, 99, 0.24);
     }
 
+    /* Dark palette matches the app: green-tinted near-black drawn from the brand teal. */
     @media (prefers-color-scheme: dark) {
       :root {
-        --cream: #141210;
-        --teal-bg: #0d2420;
-        --ink: #f0ede8;
-        --ink-soft: #c8c4be;
-        --ink-muted: #8a8680;
-        --border: #2a2722;
-        --card-bg: #1e1c19;
+        --teal: #3fbfae;
+        --teal-light: #3a9a8c;
+        --teal-500: #10796e;
+        --teal-600: #0f7f70;
+        --teal-700: #0b6a5e;
+        --teal-bg: #14302b;
+        --cream: #0e1513;
+        --ink: #eef3f1;
+        --ink-soft: #a3b3af;
+        --ink-muted: #7f8f8b;
+        --border: #2a3532;
+        --card-bg: #18211f;
+        --on-teal: #062421;
         --page-bg: var(--cream);
       }
     }
 
     [data-theme="dark"] {
-      --cream: #141210;
-      --teal-bg: #0d2420;
-      --ink: #f0ede8;
-      --ink-soft: #c8c4be;
-      --ink-muted: #8a8680;
-      --border: #2a2722;
-      --card-bg: #1e1c19;
+      --teal: #3fbfae;
+      --teal-light: #3a9a8c;
+      --teal-500: #10796e;
+      --teal-600: #0f7f70;
+      --teal-700: #0b6a5e;
+      --teal-bg: #14302b;
+      --cream: #0e1513;
+      --ink: #eef3f1;
+      --ink-soft: #a3b3af;
+      --ink-muted: #7f8f8b;
+      --border: #2a3532;
+      --card-bg: #18211f;
+      --on-teal: #062421;
       --page-bg: var(--cream);
     }
 
     [data-theme="light"] {
+      --teal: #0a7163;
+      --teal-light: #128f83;
+      --teal-500: #128f83;
+      --teal-600: #0a7163;
+      --teal-700: #085f53;
+      --teal-bg: #f0faf9;
       --cream: #faf8f5;
-      --teal-bg: #f0fafa;
-      --ink: #1a1a1a;
-      --ink-soft: #4a4a4a;
-      --ink-muted: #787878;
-      --border: #e8e4de;
+      --ink: #0f172a;
+      --ink-soft: #475569;
+      --ink-muted: #64748b;
+      --border: #e2e8f0;
       --card-bg: #ffffff;
+      --on-teal: #ffffff;
       --page-bg: var(--cream);
     }
 
@@ -130,7 +148,7 @@
       border-radius: 8px;
       background: #ffffff;
       padding: 3px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 0 0 1px rgba(13,148,136,0.18);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 0 0 1px rgba(10,113,99,0.18);
       display: inline-block;
       flex-shrink: 0;
     }
@@ -163,7 +181,7 @@
 
     .nav-cta {
       background: var(--teal);
-      color: #fff;
+      color: var(--on-teal);
       border: none;
       border-radius: 6px;
       padding: 0.5rem 1rem;
@@ -195,7 +213,7 @@
 
     .btn-primary {
       background: var(--teal);
-      color: #ffffff;
+      color: var(--on-teal);
     }
 
     .btn-primary:hover { opacity: 0.88; }
@@ -285,12 +303,6 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 1.75rem;
-    }
-
-    .card-icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.875rem;
-      display: block;
     }
 
     .card h3 {
@@ -418,7 +430,7 @@
       height: 2.5rem;
       border-radius: 50%;
       background: var(--teal);
-      color: #fff;
+      color: var(--on-teal);
       font-family: 'Fraunces', Georgia, serif;
       font-size: 1.125rem;
       font-weight: 600;
@@ -676,7 +688,7 @@
     }
 
     .hero-card h1 em {
-      color: #ccfbf1;
+      color: #ccf0ec;
       font-style: italic;
     }
 
@@ -716,61 +728,23 @@
       border-bottom: 1px solid color-mix(in srgb, var(--teal-light) 18%, transparent);
     }
 
-    .app-preview-inner {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    @media (min-width: 820px) {
-      .app-preview-inner {
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-      }
-    }
-
-    .app-preview-copy .section-title { max-width: 18ch; }
-
-    .app-preview-list {
-      list-style: none;
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.875rem;
-    }
-
-    .app-preview-list li {
-      display: flex;
-      gap: 0.75rem;
-      font-size: 0.9375rem;
-      color: var(--ink-soft);
-      line-height: 1.55;
-    }
-
-    .app-preview-list li::before {
-      content: "";
-      flex-shrink: 0;
-      width: 8px;
-      height: 8px;
-      margin-top: 0.55rem;
-      border-radius: 50%;
-      background: var(--teal-light);
-    }
-
+    /* Mirrors the app's Home screen (src/pages/Home.tsx, CheckInCard.tsx, TabBar.tsx).
+       The site's colour tokens are the app's, so the phone follows the site's theme the
+       way the app follows the phone's. */
     .phone-frame {
       width: 100%;
       max-width: 320px;
       margin: 0 auto;
-      background: #1a1a1a;
-      border-radius: 38px;
+      background: #111816;
+      border-radius: 44px;
       padding: 10px;
-      box-shadow: 0 30px 60px rgba(10, 113, 99, 0.18), 0 12px 24px rgba(0,0,0,0.18);
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 10%, transparent), 0 30px 60px rgba(10, 113, 99, 0.18), 0 12px 24px rgba(0,0,0,0.18);
     }
 
     .phone-screen {
-      background: #ffffff;
-      border-radius: 28px;
+      background: var(--page-bg);
+      color: var(--ink);
+      border-radius: 34px;
       overflow: hidden;
       position: relative;
       aspect-ratio: 9 / 19.5;
@@ -782,74 +756,42 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.45rem 1rem 0.25rem;
+      padding: 0.75rem 1.5rem 0.25rem;
       font-size: 0.6875rem;
       font-weight: 600;
-      color: #1a1a1a;
-      letter-spacing: 0.02em;
     }
 
-    .phone-statusbar-icons {
-      display: inline-flex;
-      gap: 0.3rem;
-      align-items: center;
-      opacity: 0.75;
-    }
-
-    .mock-tabs {
-      display: flex;
-      border-bottom: 1px solid #e2e8f0;
-      background: #ffffff;
-    }
-
-    .mock-tab {
-      flex: 1;
-      text-align: center;
-      padding: 0.625rem 0.25rem 0.55rem;
-      font-size: 0.625rem;
-      font-weight: 600;
-      color: #64748b;
-      border-bottom: 3px solid transparent;
-      margin-bottom: -1px;
-    }
-
-    .mock-tab.is-active {
-      color: var(--teal-600);
-      border-bottom-color: var(--teal-600);
-    }
+    .phone-statusbar svg { display: block; }
 
     .mock-body {
-      padding: 0.875rem 0.875rem 1rem;
-      background: #ffffff;
-      color: #0f172a;
+      padding: 0.5rem 0.875rem 0;
       flex: 1;
       overflow: hidden;
     }
 
-    .mock-eyebrow {
+    .mock-date {
       font-size: 0.5625rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-weight: 600;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      color: #64748b;
+      color: var(--ink-muted);
     }
 
     .mock-hello {
-      margin-top: 0.125rem;
+      margin-top: 0.2rem;
       font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #0f172a;
-      line-height: 1.1;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      line-height: 1.15;
     }
 
     .mock-hero-card {
       position: relative;
       overflow: hidden;
       margin-top: 0.75rem;
-      padding: 0.875rem 0.875rem 0.9rem;
-      border-radius: 14px;
+      padding: 0.875rem;
+      border-radius: 16px;
       background: var(--brand-gradient);
       color: #ffffff;
       box-shadow: var(--brand-shadow-sm);
@@ -858,97 +800,240 @@
     .mock-hero-card::after {
       content: "";
       position: absolute;
-      right: -24px;
-      top: -24px;
-      width: 90px;
-      height: 90px;
+      right: -26px;
+      top: -32px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(255,255,255,0.18), transparent 70%);
       pointer-events: none;
     }
 
     .mock-hero-eyebrow {
-      position: relative;
-      font-size: 0.5625rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-size: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      opacity: 0.92;
+      opacity: 0.9;
     }
 
     .mock-hero-title {
-      position: relative;
-      margin-top: 0.375rem;
-      font-size: 0.8125rem;
+      margin-top: 0.3rem;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .mock-hero-row {
+      margin-top: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .mock-hero-track {
+      flex: 1;
+      height: 4px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.25);
+      overflow: hidden;
+    }
+
+    .mock-hero-track span {
+      display: block;
+      width: 9%;
+      height: 100%;
+      border-radius: 99px;
+      background: #ffffff;
+    }
+
+    .mock-hero-btn {
+      padding: 0.4rem 0.7rem;
+      border-radius: 9px;
+      background: #ffffff;
+      color: #075a50;
+      font-size: 0.5625rem;
+      font-weight: 600;
+    }
+
+    .mock-section-label {
+      margin: 0.9rem 0 0.4rem 0.2rem;
+      font-size: 0.5625rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+    }
+
+    .mock-card {
+      padding: 0.7rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+    }
+
+    .mock-question {
+      font-size: 0.625rem;
       font-weight: 600;
       line-height: 1.3;
     }
 
-    .mock-hero-pill {
-      position: relative;
-      display: inline-block;
-      margin-top: 0.625rem;
-      padding: 0.4rem 0.75rem;
-      background: #ffffff;
-      color: var(--teal-700);
-      border-radius: 9px;
-      font-size: 0.625rem;
-      font-weight: 700;
-    }
-
-    .mock-tiles {
-      margin-top: 0.875rem;
+    .mock-levels {
+      margin-top: 0.55rem;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5rem;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.25rem;
     }
 
-    .mock-section-label {
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-      font-size: 0.5625rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #94a3b8;
-    }
-
-    .mock-tile {
-      padding: 0.55rem 0.55rem 0.6rem;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      background: #ffffff;
-    }
-
-    .mock-tile-icon {
-      width: 22px;
-      height: 22px;
-      border-radius: 6px;
+    .mock-level {
+      min-height: 2.6rem;
+      padding: 0.25rem 0.1rem;
+      border-radius: 8px;
+      background: var(--page-bg);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 0.15rem;
+      text-align: center;
+    }
+
+    .mock-level b {
+      font-family: 'Fraunces', Georgia, serif;
       font-size: 0.75rem;
-      margin-bottom: 0.375rem;
+      font-weight: 600;
+      line-height: 1;
     }
 
-    .mock-tile-icon.teal { background: #ccfbf1; color: var(--teal-700); }
-    .mock-tile-icon.warm { background: #fef3c7; color: #b45309; }
-    .mock-tile-icon.cool { background: #ede9fe; color: #6d28d9; }
-    .mock-tile-icon.pink { background: #fce7f3; color: #be185d; }
-
-    .mock-tile-title {
-      font-size: 0.6875rem;
-      font-weight: 700;
-      color: #0f172a;
+    .mock-level small {
+      font-size: 0.375rem;
+      font-weight: 600;
       line-height: 1.15;
+      color: var(--ink-muted);
     }
 
-    .mock-tile-sub {
-      margin-top: 0.15rem;
-      font-size: 0.5625rem;
-      color: #64748b;
-      line-height: 1.25;
+    .mock-days {
+      margin-top: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.5rem;
+      color: var(--ink-muted);
     }
+
+    .mock-days-track {
+      flex: 1;
+      height: 4px;
+      border-radius: 99px;
+      background: color-mix(in srgb, var(--border) 70%, var(--page-bg));
+      overflow: hidden;
+    }
+
+    .mock-days-track span {
+      display: block;
+      width: 40%;
+      height: 100%;
+      border-radius: 99px;
+      background: var(--teal-600);
+    }
+
+    .mock-rec-title {
+      font-size: 0.625rem;
+      font-weight: 600;
+    }
+
+    .mock-rec-sub {
+      margin-top: 0.15rem;
+      font-size: 0.5rem;
+      color: var(--ink-muted);
+    }
+
+    /* Floating bottom tab bar */
+    .mock-tabbar {
+      position: absolute;
+      left: 0.6rem;
+      right: 0.6rem;
+      bottom: 1.1rem;
+      height: 2.9rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+      border-radius: 1.5rem;
+      background: color-mix(in srgb, var(--card-bg) 86%, transparent);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      backdrop-filter: blur(16px) saturate(1.4);
+      box-shadow: 0 0 0 1px var(--border), 0 10px 28px -12px rgb(0 0 0 / 0.3);
+    }
+
+    .mock-tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.15rem;
+      font-size: 0.4375rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+    }
+
+    .mock-tab svg { width: 16px; height: 16px; }
+    .mock-tab.is-active { color: var(--teal); }
+
+    .phone-home-indicator {
+      position: absolute;
+      left: 50%;
+      bottom: 0.4rem;
+      width: 34%;
+      height: 4px;
+      border-radius: 99px;
+      background: var(--ink);
+      opacity: 0.85;
+      transform: translateX(-50%);
+    }
+
+    /* ── Line icons (Lucide, as in the app) ── */
+    .icon {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .card-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 12px;
+      background: var(--teal-bg);
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+
+    /* ── Support notice ── */
+    .support-notice {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      gap: 0.875rem;
+      align-items: flex-start;
+    }
+
+    .support-notice .icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 0.15rem; color: var(--teal); }
+
+    .support-notice p {
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    .support-notice p + p { margin-top: 0.375rem; }
+    .support-notice strong { color: var(--ink); font-weight: 600; }
+    .support-notice a { color: var(--teal); font-weight: 600; }
   </style>
 </head>
 <body>
@@ -980,7 +1065,7 @@
       <div class="hero-card">
         <span class="hero-brand-mark" aria-hidden="true"><img src="digitalbalance.png" alt=""></span>
         <span class="hero-eyebrow">Digital Balance</span>
-        <h1>A 14-day program to stop reaching for your phone <em>without meaning to</em>.</h1>
+        <h1>23 short lessons to stop reaching for your phone <em>without meaning to</em>.</h1>
         <p class="hero-tagline">Based on Acceptance &amp; Commitment Therapy. Work through it once, keep the skills for good.</p>
         <div class="hero-cta-group">
           <div class="store-badges">
@@ -1006,22 +1091,22 @@
       <p class="section-body">Digital Balance isn't an app you use every day forever. It's a structured course you work through, then close for good.</p>
       <div class="cards-grid">
         <div class="card">
-          <span class="card-icon">📚</span>
-          <h3>52 lessons. 7 exercises. One program.</h3>
-          <p>Research-backed and built on ACT — covering awareness, values, habits, and the engagement economy. Includes interactive exercises like groupthink awareness, notification inventory, and digital sunset. Real practice, not passive reading.</p>
+          <span class="card-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></span>
+          <h3>23 lessons. 7 exercises. One program.</h3>
+          <p>Research-backed and built on ACT — covering awareness, values, habits, social media, and AI. Plus 17 optional bonus lessons. Exercises include a notification inventory, an app audit, and a digital sunset. Real practice, not passive reading.</p>
         </div>
         <div class="card">
-          <span class="card-icon">🎯</span>
+          <span class="card-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
           <h3>Personalized to you</h3>
-          <p>A short intake maps your actual relationship with technology. Insights surface throughout the course — and a dashboard tracks your progress.</p>
+          <p>A short intake maps your actual relationship with technology. It recommends bonus lessons for the areas you find hardest, and a one-tap daily check-in tracks how intentional your choices are.</p>
         </div>
         <div class="card">
-          <span class="card-icon">🔒</span>
+          <span class="card-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
           <h3>Privacy-first</h3>
-          <p>Zero data collection. Everything stays on your device. No account, no cloud sync, no analytics, no ads. Your attention data belongs to you.</p>
+          <p>Zero data collection. Everything stays on your device. No account, no cloud sync, no analytics, no ads. Reminders are scheduled by your phone, and you can export a backup whenever you like.</p>
         </div>
         <div class="card">
-          <span class="card-icon">📵</span>
+          <span class="card-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h.01"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/><path d="M5 12.859a10 10 0 0 1 5.17-2.69"/><path d="M19 12.859a10 10 0 0 0-2.007-1.523"/><path d="M2 8.82a15 15 0 0 1 4.177-2.643"/><path d="M22 8.82a15 15 0 0 0-11.288-3.764"/><path d="m2 2 20 20"/></svg></span>
           <h3>Works offline</h3>
           <p>Install it once and own it. No server dependency, no login wall, no subscription to keep it running. Works offline, any time you need it.</p>
         </div>
@@ -1032,53 +1117,52 @@
   <!-- Inside the app -->
   <section class="app-preview" id="inside-the-app">
     <div class="container">
-      <div class="app-preview-inner">
-        <div aria-hidden="true">
-          <div class="phone-frame">
-            <div class="phone-screen">
-              <div class="phone-statusbar">
-                <span>9:41</span>
-                <span class="phone-statusbar-icons">●●●● ▮</span>
+      <div aria-hidden="true">
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <div class="phone-statusbar">
+              <span>9:41</span>
+              <svg width="44" height="11" viewBox="0 0 44 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.5" y="5" width="3" height="6" rx="1"/><rect x="9" y="3" width="3" height="8" rx="1"/><rect x="13.5" y="1" width="3" height="10" rx="1"/><rect x="21" y="0.5" width="20" height="10" rx="3" fill="none" stroke="currentColor" stroke-opacity="0.45"/><rect x="23" y="2.5" width="14" height="6" rx="1.5"/><rect x="42" y="3.5" width="1.5" height="4" rx="0.75" opacity="0.45"/></svg>
+            </div>
+            <div class="mock-body">
+              <p class="mock-date">Tuesday, October 6</p>
+              <p class="mock-hello">Good morning</p>
+              <div class="mock-hero-card">
+                <p class="mock-hero-eyebrow">Up next · Lesson 3 of 23</p>
+                <p class="mock-hero-title">The Hooked Brain</p>
+                <div class="mock-hero-row">
+                  <span class="mock-hero-track"><span></span></span>
+                  <span class="mock-hero-btn">Continue</span>
+                </div>
               </div>
-              <nav class="mock-tabs" aria-label="Mockup tab strip">
-                <span class="mock-tab is-active">Home</span>
-                <span class="mock-tab">Lessons</span>
-                <span class="mock-tab">Awareness</span>
-                <span class="mock-tab">Profile</span>
-              </nav>
-              <div class="mock-body">
-                <p class="mock-eyebrow">Tuesday morning</p>
-                <h3 class="mock-hello">Welcome back</h3>
-                <div class="mock-hero-card">
-                  <p class="mock-hero-eyebrow">Lesson 3 of 52</p>
-                  <p class="mock-hero-title">Awareness: notice the urge before the tap.</p>
-                  <span class="mock-hero-pill">Resume lesson →</span>
+              <p class="mock-section-label">Today's check-in</p>
+              <div class="mock-card">
+                <p class="mock-question">How intentional were your digital choices today?</p>
+                <div class="mock-levels">
+                    <span class="mock-level"><b>1</b><small>Autopilot</small></span>
+                    <span class="mock-level"><b>2</b><small>Reactive</small></span>
+                    <span class="mock-level"><b>3</b><small>Mixed</small></span>
+                    <span class="mock-level"><b>4</b><small>Intentional</small></span>
+                    <span class="mock-level"><b>5</b><small>Fully intentional</small></span>
                 </div>
-                <p class="mock-section-label">Today's tools</p>
-                <div class="mock-tiles">
-                  <div class="mock-tile">
-                    <div class="mock-tile-icon teal">🧘</div>
-                    <p class="mock-tile-title">Log awareness</p>
-                    <p class="mock-tile-sub">Mindful pause</p>
-                  </div>
-                  <div class="mock-tile">
-                    <div class="mock-tile-icon warm">📚</div>
-                    <p class="mock-tile-title">All lessons</p>
-                    <p class="mock-tile-sub">3 / 52 complete</p>
-                  </div>
-                  <div class="mock-tile">
-                    <div class="mock-tile-icon cool">📊</div>
-                    <p class="mock-tile-title">Your progress</p>
-                    <p class="mock-tile-sub">12 entries logged</p>
-                  </div>
-                  <div class="mock-tile">
-                    <div class="mock-tile-icon pink">📖</div>
-                    <p class="mock-tile-title">Resources</p>
-                    <p class="mock-tile-sub">Articles &amp; help</p>
-                  </div>
+                <div class="mock-days">
+                  <span class="mock-days-track"><span></span></span>
+                  <span>4 of 10 days for your certificate</span>
                 </div>
+              </div>
+              <p class="mock-section-label">Recommended for you</p>
+              <div class="mock-card">
+                <p class="mock-rec-title">The Infinite Scroll Monster</p>
+                <p class="mock-rec-sub">Bonus lesson · picked for limiting unintended scrolling</p>
               </div>
             </div>
+            <div class="mock-tabbar">
+              <span class="mock-tab is-active"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</span>
+              <span class="mock-tab"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>Lessons</span>
+              <span class="mock-tab"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>Awareness</span>
+              <span class="mock-tab"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</span>
+            </div>
+            <span class="phone-home-indicator"></span>
           </div>
         </div>
       </div>
@@ -1115,20 +1199,26 @@
         <div>
           <p class="section-label">Why now</p>
           <h2 class="section-title">The law is catching up to what you already feel.</h2>
-          <p class="section-body">Courts have begun ruling that social media platforms knowingly designed their products to be addictive. The Surgeon General has called for warning labels. Thousands of families are in active litigation.</p>
-          <p class="section-body">This isn't fringe opinion anymore — it's settled enough that federal judges are letting cases proceed. The harms are real, documented, and systemic.</p>
+          <p class="section-body">Juries are starting to agree. In 2026 a Los Angeles jury found Meta and YouTube negligent in the first trial over a young person's compulsive social media use, and a New Mexico jury found Meta misled the public about child safety.</p>
+          <p class="section-body">In August, Meta agreed to pay up to $17 billion and change its products for teens to settle a case brought by state attorneys general — without admitting wrongdoing. European regulators have preliminarily found that TikTok's and Meta's addictive design breaks EU law, and Australia now keeps under-16s off social media.</p>
           <p class="section-body">Digital Balance exists because people deserve tools to help themselves — right now, before the law finishes catching up.</p>
+          <p class="callout-source">As of October 2026. Several rulings are under appeal.</p>
         </div>
         <div style="display: flex; flex-direction: column; gap: 1.25rem; padding-top: 0.5rem;">
           <div class="callout">
-            <p style="font-size: 0.9375rem; color: var(--ink); font-weight: 500; margin-bottom: 0.5rem;">In re: Social Media Adolescent Addiction/Personal Injury Products Liability Litigation</p>
-            <p style="font-size: 0.875rem; color: var(--ink-soft); line-height: 1.65;">The MDL consolidating thousands of claims against Meta, TikTok, Snap, and Google — alleging platforms were designed to create compulsive use in minors.</p>
-            <p class="callout-source">N.D. Cal., MDL No. 3047</p>
+            <p style="font-size: 0.9375rem; color: var(--ink); font-weight: 500; margin-bottom: 0.5rem;">K.G.M. v. Meta Platforms, Inc., et al.</p>
+            <p style="font-size: 0.875rem; color: var(--ink-soft); line-height: 1.65;">The first jury verdict in the youth social media addiction cases: Meta and YouTube found negligent, $6 million awarded. Snap and TikTok settled before trial.</p>
+            <p class="callout-source">Los Angeles Superior Court, JCCP No. 5255 · March 2026</p>
           </div>
           <div class="callout">
-            <p style="font-size: 0.9375rem; color: var(--ink); font-weight: 500; margin-bottom: 0.5rem;">U.S. Surgeon General's Advisory, 2023</p>
-            <p style="font-size: 0.875rem; color: var(--ink-soft); line-height: 1.65;">Dr. Vivek Murthy called for social media warning labels — the same public health mechanism used for tobacco — citing mental health harms from algorithmic engagement design.</p>
-            <p class="callout-source">U.S. Dept. of Health and Human Services</p>
+            <p style="font-size: 0.9375rem; color: var(--ink); font-weight: 500; margin-bottom: 0.5rem;">People of the State of California et al. v. Meta Platforms, Inc.</p>
+            <p style="font-size: 0.875rem; color: var(--ink-soft); line-height: 1.65;">Settled during trial for up to about $17 billion, with required teen safeguards including default time limits and nighttime blocks. No admission of wrongdoing.</p>
+            <p class="callout-source">N.D. Cal. No. 4:23-cv-05448 · August 2026</p>
+          </div>
+          <div class="callout">
+            <p style="font-size: 0.9375rem; color: var(--ink); font-weight: 500; margin-bottom: 0.5rem;">European Commission, Digital Services Act</p>
+            <p style="font-size: 0.875rem; color: var(--ink-soft); line-height: 1.65;">Preliminary findings that TikTok's and Meta's infinite scroll, autoplay, push notifications and recommender systems are addictive design that breaches EU law. Not yet final.</p>
+            <p class="callout-source">TikTok, February 2026 · Instagram and Facebook, July 2026</p>
           </div>
         </div>
       </div>
@@ -1154,17 +1244,24 @@
           <div class="step-number">2</div>
           <div class="step-content">
             <h3>Work through lessons and exercises at your own pace</h3>
-            <p>Each lesson is short — 10–15 minutes. Real exercises follow real content. Awareness logs, commitment practices, values clarification. Actual work, not passive reading.</p>
+            <p>Each lesson takes a few minutes. Real exercises follow real content. Daily check-ins, commitment practices, values clarification. Actual work, not passive reading.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-number">3</div>
           <div class="step-content">
             <h3>Build lasting intentional habits — then close the app for good</h3>
-            <p>This is the only app that explicitly wants you to stop using it. When you've built the habits, you're done. That's success. That's the whole point.</p>
+            <p>Finish the 23 core lessons and check in on 10 days to earn your certificate. This is the only app that explicitly wants you to stop using it. When you've built the habits, you're done. That's success. That's the whole point.</p>
           </div>
         </div>
       </div>
+      <aside class="support-notice" aria-label="About this program and crisis support">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>
+        <div>
+          <p>Digital Balance is an educational wellness program. It isn't medical or mental-health treatment, and it isn't a substitute for care from a qualified professional.</p>
+          <p><strong>If you're in crisis or thinking about harming yourself,</strong> in the US call or text <a href="tel:988">988</a> (Suicide &amp; Crisis Lifeline). Elsewhere, call your local emergency number or find a helpline at <a href="https://findahelpline.com" target="_blank" rel="noopener">findahelpline.com</a>.</p>
+        </div>
+      </aside>
     </div>
   </section>
 

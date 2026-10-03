@@ -5,58 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="About Digital Balance — the people who built it and why.">
   <title>About Us — Digital Balance</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --teal: #0a7163;
-      --teal-light: #0d9488;
-      --teal-bg: #f0fafa;
+      --teal-light: #128f83;
+      --teal-bg: #f0faf9;
       --cream: #faf8f5;
-      --ink: #1a1a1a;
-      --ink-soft: #4a4a4a;
-      --ink-muted: #787878;
-      --border: #e8e4de;
+      --ink: #0f172a;
+      --ink-soft: #475569;
+      --ink-muted: #64748b;
+      --border: #e2e8f0;
       --card-bg: #ffffff;
+      --on-teal: #ffffff;
       --page-bg: var(--cream);
       --max-w: 72rem;
     }
 
+    /* Dark palette matches the app: green-tinted near-black drawn from the brand teal. */
     @media (prefers-color-scheme: dark) {
       :root {
-        --cream: #141210;
-        --teal-bg: #0d2420;
-        --ink: #f0ede8;
-        --ink-soft: #c8c4be;
-        --ink-muted: #8a8680;
-        --border: #2a2722;
-        --card-bg: #1e1c19;
+        --teal: #3fbfae;
+        --teal-light: #3a9a8c;
+        --teal-bg: #14302b;
+        --cream: #0e1513;
+        --ink: #eef3f1;
+        --ink-soft: #a3b3af;
+        --ink-muted: #7f8f8b;
+        --border: #2a3532;
+        --card-bg: #18211f;
+        --on-teal: #062421;
         --page-bg: var(--cream);
       }
     }
 
     [data-theme="dark"] {
-      --cream: #141210;
-      --teal-bg: #0d2420;
-      --ink: #f0ede8;
-      --ink-soft: #c8c4be;
-      --ink-muted: #8a8680;
-      --border: #2a2722;
-      --card-bg: #1e1c19;
+      --teal: #3fbfae;
+      --teal-light: #3a9a8c;
+      --teal-bg: #14302b;
+      --cream: #0e1513;
+      --ink: #eef3f1;
+      --ink-soft: #a3b3af;
+      --ink-muted: #7f8f8b;
+      --border: #2a3532;
+      --card-bg: #18211f;
+      --on-teal: #062421;
       --page-bg: var(--cream);
     }
 
     [data-theme="light"] {
+      --teal: #0a7163;
+      --teal-light: #128f83;
+      --teal-bg: #f0faf9;
       --cream: #faf8f5;
-      --teal-bg: #f0fafa;
-      --ink: #1a1a1a;
-      --ink-soft: #4a4a4a;
-      --ink-muted: #787878;
-      --border: #e8e4de;
+      --ink: #0f172a;
+      --ink-soft: #475569;
+      --ink-muted: #64748b;
+      --border: #e2e8f0;
       --card-bg: #ffffff;
+      --on-teal: #ffffff;
       --page-bg: var(--cream);
     }
 
@@ -127,7 +136,7 @@
 
     .nav-cta {
       background: var(--teal);
-      color: #fff;
+      color: var(--on-teal);
       border: none;
       border-radius: 6px;
       padding: 0.5rem 1rem;
