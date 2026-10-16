@@ -1,24 +1,24 @@
-# Deploying digitalbalance.app via Cloudflare Pages
+# Deploying digitalbalance.app via Cloudflare Workers
 
-## 1. Connect GitHub to Cloudflare
-- Log in to https://dash.cloudflare.com
-- Go to Workers & Pages → Create → Pages → Connect to Git
-- Select the `ryan5hanahan/digitalbalance-website` repository
-- Build settings: Framework preset = None, Build command = (leave empty), Build output directory = /
-- Click "Save and Deploy"
+The site is static files in `public/`, served by the Cloudflare Worker
+`digitalbalance-app` (Workers & Pages → digitalbalance-app). There is no build step.
 
-## 2. Add Custom Domain
-- After first deploy, go to the project → Custom domains → Add custom domain
-- Enter: digitalbalance.app
-- Cloudflare will auto-configure DNS if the domain is already on Cloudflare
-- If the domain is NOT on Cloudflare DNS yet:
-  - Transfer DNS to Cloudflare, OR
-  - Add a CNAME record: digitalbalance.app → <your-project>.pages.dev
+## Updating the site
+- Push to the `master` branch of this repo
+- Workers Builds runs `npx wrangler deploy` and the site updates within a minute
 
-## 3. SSL/HTTPS
-- Cloudflare auto-provisions HTTPS — no cert management needed
-- Full (Strict) SSL mode recommended
+## What gets published
+`wrangler.jsonc` sets the assets directory to `public/`, so only that folder is
+uploaded. Keep everything that isn't part of the site (this file, `.gitignore`,
+notes) outside it. Without the config, wrangler served the whole repo, `.git` included.
 
-## 4. Updating the site
-- Push to the `main` branch of this repo
-- Cloudflare auto-deploys within ~30 seconds
+The `name` in `wrangler.jsonc` must match the Worker's name in the dashboard.
+
+## Dashboard settings (Settings → Build)
+- Git repository: `ryan5hanahan/digitalbalance-website`, production branch `master`
+- Build command: none
+- Deploy command: `npx wrangler deploy`
+- Root directory: `/`
+
+## Custom domain
+Domains tab → `digitalbalance.app` (HTTPS is automatic).

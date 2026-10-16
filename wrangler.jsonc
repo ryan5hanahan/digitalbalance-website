@@ -1,0 +1,7 @@
+// Static site on Cloudflare Workers. Only public/ is uploaded; without this file
+// wrangler served the whole repo, .git included.
+{
+  "name": "digitalbalance-app",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./public" }
+}
